@@ -1,17 +1,16 @@
-I load following libraries in R environment.
+I load following libraries in RStudio environment.
 Library(tidyverse)
 Library(dplyr)
 Library(lubridate)
 Library(janitor)
 Library(readr)
 Library(data.table)
-Import of these files inside RStudio, I execute following commands
+
+#Import of these files inside RStudio, I execute following commands
 #Importing data in RStudio
 tripdata_2023_01 <- read.csv("C:/ Jan 2023-Dec 2023/ 202301-divvy-tripdata.csv")
 tripdata_2023_02 <- ("C:/ Jan 2023-Dec 2023/ 202302-divvy-tripdata.csv")
 tripdata_2023_03 <- ("C:/ Jan 2023-Dec 2023/ 202303-divvy-tripdata.csv")
-tripdata_2023_04 <- ("C:/ Jan 2023-Dec 2023/ 202304-divvy-tripdata.csv")
-
 tripdata_2023_04 <- ("C:/ Jan 2023-Dec 2023/ 202304-divvy-tripdata.csv")
 tripdata_2023_05 <- ("C:/ Jan 2023-Dec 2023/ 202305-divvy-tripdata.csv")
 tripdata_2023_06 <- ("C:/ Jan 2023-Dec 2023/ 202306-divvy-tripdata.csv")
@@ -24,11 +23,15 @@ tripdata_2023_12 <- ("C:/ Jan 2023-Dec 2023/ 202312-divvy-tripdata.csv")
 #Checking inside R Studtio
 colnames(tripdata_2023_12)
 str(tripdata_2023_02)
+
+
 #Combining all 12 months’ data
 #The rbind function combines or concatenates data frames or matrices by rows. the rbind stands for row binds it shows that it appends rows of one object to another
 AllCombinedddata <- rbind(tripdata_2023_01, tripdata_2023_02, tripdata_2023_03, tripdata_2023_04, tripdata_2023_05, tripdata_2023_06, tripdata_2023_07, tripdata_2023_08, tripdata_2023_09, tripdata_2023_10, tripdata_2023_11, tripdata_2023_12)
+
 # Writing data to local drive 
 write.csv(AllCombinedddata, file = " C:/ Jan 2023-Dec 2023/AllCombineddata.csv"",row.names = FALSE)
+
 From here on I started using BigQuery
 
 I created dataset named “Cyclistic” inside Bigquery and created table with the name “AllCombineddata” inside Big Query
